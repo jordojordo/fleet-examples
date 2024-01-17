@@ -1,5 +1,0 @@
-defaultNamespace: cattle-fleet-system
-helm:
-  releaseName: traefik
-  chart: traefik
-  repo: https://traefik.github.io/charts
