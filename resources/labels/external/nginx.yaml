@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-labels-ext
+  labels:
+    app: nginx-labels-ext
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-labels-ext
+  template:
+    metadata:
+      labels:
+        app: nginx-labels-ext
+    spec:
+      containers:
+      - name: nginx-labels-ext
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-labels-intern
+  labels:
+    app: nginx-labels-intern
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-labels-intern
+  template:
+    metadata:
+      labels:
+        app: nginx-labels-intern
+    spec:
+      containers:
+      - name: nginx-labels-intern
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-helm-intern
+  labels:
+    app: nginx-helm-intern
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-helm-intern
+  template:
+    metadata:
+      labels:
+        app: nginx-helm-intern
+    spec:
+      containers:
+      - name: nginx-helm-intern
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80

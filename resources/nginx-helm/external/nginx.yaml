@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-helm-ext
+  labels:
+    app: nginx-helm-ext
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-helm-ext
+  template:
+    metadata:
+      labels:
+        app: nginx-helm-ext
+    spec:
+      containers:
+      - name: nginx-helm-ext
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
